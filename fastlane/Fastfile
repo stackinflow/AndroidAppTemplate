@@ -16,6 +16,11 @@
 default_platform(:android)
 
 platform :android do
+  desc "KtLint Check"
+  lane :lint do
+    gradle(task: "ktlintcheck")
+  end
+
   desc "Runs all the tests"
   lane :test do
     gradle(task: "test")
