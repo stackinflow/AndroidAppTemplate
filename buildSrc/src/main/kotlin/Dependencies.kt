@@ -22,12 +22,19 @@ object Lib {
 
   object Google {
     const val MATERIAL_DESIGN = "com.google.android.material:material:1.1.0"
+  }
 
+  object Logger {
+    const val TIMBER = "com.jakewharton.timber:timber:4.7.1"
   }
 
   object Kotlin {
     private const val KOTLIN_VERSION = "1.3.72"
     const val STD_LIB = "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
     const val GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
+  }
+
+  object Square {
+    const val LEAK_CANARY = "com.squareup.leakcanary:leakcanary-android:2.4"
   }
 }
