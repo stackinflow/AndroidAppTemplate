@@ -1,5 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 import com.stackinflow.androidapptemplate.buildsrc.Lib
+
 buildscript {
   repositories {
     google()
@@ -21,6 +22,13 @@ plugins {
 }
 
 allprojects {
+  apply plugin: "org.jlleitschuh.gradle.ktlint" // Version should be inherited from parent
+
+  // Optionally configure plugin
+  ktlint {
+    debug = true
+  }
+
   repositories {
     google()
     jcenter()
