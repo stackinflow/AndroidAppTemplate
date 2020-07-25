@@ -27,12 +27,12 @@ platform :android do
   end
 
   desc "Build with debug apk"
-  lane :debug_build do
+  lane :build_debug do
     gradle(task: "clean assembleDebug")
   end
 
   desc "Build with release apk"
-  lane :release_build do
+  lane :build_release do
     gradle(task: "clean assembleRelease")
   end
 end
