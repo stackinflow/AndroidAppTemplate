@@ -9,6 +9,15 @@ object Lib {
     const val APP_COMPAT = "androidx.appcompat:appcompat:1.1.0"
     const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:1.1.3"
 
+    object Hilt {
+      private const val HILT_VERSION = "1.0.0-alpha01"
+
+      const val LIFECYCLE_VIEWMODEL = "androidx.hilt:hilt-lifecycle-viewmodel:$HILT_VERSION"
+      const val WORK = "androidx.hilt:hilt-work:$HILT_VERSION"
+
+      const val COMPILER = "androidx.hilt:hilt-compiler:$HILT_VERSION"
+    }
+
     object Test {
       const val EXT_JUNIT = "androidx.test.ext:junit:1.1.1"
       const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:3.2.0"
@@ -50,5 +59,6 @@ object Lib {
 
   object Test {
     const val JUNIT = "junit:junit:4.13"
+    const val ROBOELECTRIC = "org.robolectric:robolectric:4.3"
   }
 }
