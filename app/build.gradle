@@ -2,6 +2,7 @@ plugins {
   id 'com.android.application'
   id 'kotlin-android'
   id 'kotlin-kapt'
+  id 'dagger.hilt.android.plugin'
 }
 
 import com.stackinflow.androidapptemplate.buildsrc.AppConfig
@@ -33,6 +34,10 @@ android {
   kotlinOptions {
     jvmTarget = '1.8'
   }
+}
+
+hilt {
+  enableTransformForLocalTests = true
 }
 
 kapt {
