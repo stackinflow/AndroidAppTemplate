@@ -1,6 +1,7 @@
 plugins {
   id 'com.android.application'
   id 'kotlin-android'
+  id 'kotlin-kapt'
 }
 
 import com.stackinflow.androidapptemplate.buildsrc.AppConfig
@@ -34,13 +35,28 @@ android {
   }
 }
 
+kapt {
+  correctErrorTypes true
+}
+
 dependencies {
 
   implementation Lib.Androidx.APP_COMPAT
   implementation Lib.Androidx.CORE_KTX
   implementation Lib.Androidx.CONSTRAINT_LAYOUT
 
+  androidTestImplementation Lib.Androidx.Test.ESPRESSO_CORE
+  androidTestImplementation Lib.Androidx.Test.EXT_JUNIT
+
+  implementation Lib.Google.Dagger.HILT_ANDROID
+  kapt Lib.Google.Dagger.HILT_ANDROID_COMPILER
   implementation Lib.Google.MATERIAL_DESIGN
+
+  androidTestImplementation Lib.Google.Dagger.Test.HILT_ANDROID_TESTING
+  kaptAndroidTest Lib.Google.Dagger.HILT_ANDROID_COMPILER
+
+  testImplementation Lib.Google.Dagger.Test.HILT_ANDROID_TESTING
+  kaptTest Lib.Google.Dagger.HILT_ANDROID_COMPILER
 
   implementation Lib.Kotlin.STD_LIB
 
@@ -49,6 +65,4 @@ dependencies {
   debugImplementation Lib.Square.LEAK_CANARY
 
   testImplementation Lib.Test.JUNIT
-  androidTestImplementation Lib.Androidx.Test.EXT_JUNIT
-  androidTestImplementation Lib.Androidx.Test.ESPRESSO_CORE
 }
