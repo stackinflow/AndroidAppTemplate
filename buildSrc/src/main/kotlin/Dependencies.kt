@@ -9,22 +9,38 @@ object Lib {
     const val APP_COMPAT = "androidx.appcompat:appcompat:1.1.0"
     const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:1.1.3"
 
+    object Hilt {
+      private const val HILT_VERSION = "1.0.0-alpha01"
+
+      const val LIFECYCLE_VIEWMODEL = "androidx.hilt:hilt-lifecycle-viewmodel:$HILT_VERSION"
+      const val WORK = "androidx.hilt:hilt-work:$HILT_VERSION"
+
+      const val COMPILER = "androidx.hilt:hilt-compiler:$HILT_VERSION"
+    }
+
     object Test {
       const val EXT_JUNIT = "androidx.test.ext:junit:1.1.1"
       const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:3.2.0"
     }
   }
 
-  object Test {
-    const val JUNIT = "junit:junit:4.13"
-  }
-
   object Google {
-    const val MATERIAL_DESIGN = "com.google.android.material:material:1.1.0"
-  }
 
-  object Logger {
-    const val TIMBER = "com.jakewharton.timber:timber:4.7.1"
+    object Dagger {
+      private const val HILT_ANDROID_VERSION = "2.28.3-alpha"
+      const val HILT_ANDROID = "com.google.dagger:hilt-android:$HILT_ANDROID_VERSION"
+      const val HILT_ANDROID_COMPILER =
+        "com.google.dagger:hilt-android-compiler:$HILT_ANDROID_VERSION"
+      const val HILT_ANDROID_GRADLE_PLUGIN =
+        "com.google.dagger:hilt-android-gradle-plugin:$HILT_ANDROID_VERSION"
+
+      object Test {
+        const val HILT_ANDROID_TESTING =
+          "com.google.dagger:hilt-android-testing:$HILT_ANDROID_VERSION"
+      }
+    }
+
+    const val MATERIAL_DESIGN = "com.google.android.material:material:1.1.0"
   }
 
   object Kotlin {
@@ -33,7 +49,16 @@ object Lib {
     const val GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
   }
 
+  object Logger {
+    const val TIMBER = "com.jakewharton.timber:timber:4.7.1"
+  }
+
   object Square {
     const val LEAK_CANARY = "com.squareup.leakcanary:leakcanary-android:2.4"
+  }
+
+  object Test {
+    const val JUNIT = "junit:junit:4.13"
+    const val ROBOELECTRIC = "org.robolectric:robolectric:4.3"
   }
 }
