@@ -1,6 +1,8 @@
 plugins {
   id 'com.android.application'
   id 'kotlin-android'
+  id 'kotlin-kapt'
+  id 'dagger.hilt.android.plugin'
 }
 
 import com.stackinflow.androidapptemplate.buildsrc.AppConfig
@@ -16,7 +18,7 @@ android {
     versionCode AppConfig.VERSION_CODE
     versionName AppConfig.VERSION_NAME
 
-    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner "com.stackinflow.androidapptemplate.CustomTestRunner"
   }
 
   buildTypes {
@@ -25,13 +27,29 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
   }
+
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
+
   kotlinOptions {
     jvmTarget = '1.8'
   }
+
+  testOptions {
+    unitTests {
+      includeAndroidResources = true
+    }
+  }
+}
+
+hilt {
+  enableTransformForLocalTests = true
+}
+
+kapt {
+  correctErrorTypes true
 }
 
 dependencies {
@@ -39,8 +57,24 @@ dependencies {
   implementation Lib.Androidx.APP_COMPAT
   implementation Lib.Androidx.CORE_KTX
   implementation Lib.Androidx.CONSTRAINT_LAYOUT
+  androidTestImplementation Lib.Androidx.Test.ESPRESSO_CORE
+  androidTestImplementation Lib.Androidx.Test.EXT_JUNIT
 
+  implementation Lib.Androidx.Hilt.LIFECYCLE_VIEWMODEL
+  implementation Lib.Androidx.Hilt.WORK
+  kapt Lib.Androidx.Hilt.COMPILER
+  kaptTest Lib.Androidx.Hilt.COMPILER
+  kaptAndroidTest Lib.Androidx.Hilt.COMPILER
+
+  implementation Lib.Google.Dagger.HILT_ANDROID
+  kapt Lib.Google.Dagger.HILT_ANDROID_COMPILER
   implementation Lib.Google.MATERIAL_DESIGN
+
+  androidTestImplementation Lib.Google.Dagger.Test.HILT_ANDROID_TESTING
+  kaptAndroidTest Lib.Google.Dagger.HILT_ANDROID_COMPILER
+
+  testImplementation Lib.Google.Dagger.Test.HILT_ANDROID_TESTING
+  kaptTest Lib.Google.Dagger.HILT_ANDROID_COMPILER
 
   implementation Lib.Kotlin.STD_LIB
 
@@ -52,6 +86,5 @@ dependencies {
   debugImplementation Lib.Square.LEAK_CANARY
 
   testImplementation Lib.Test.JUNIT
-  androidTestImplementation Lib.Androidx.Test.EXT_JUNIT
-  androidTestImplementation Lib.Androidx.Test.ESPRESSO_CORE
+  testImplementation Lib.Test.ROBOELECTRIC
 }

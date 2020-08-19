@@ -3,9 +3,11 @@ package com.stackinflow.androidapptemplate
 import android.app.Application
 import android.os.StrictMode
 import com.stackinflow.androidapptemplate.util.CrashReportingTree
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 
+@HiltAndroidApp
 class AppTemplateApplication : Application() {
 
   override fun onCreate() {
