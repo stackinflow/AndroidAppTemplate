@@ -1,5 +1,5 @@
 <p align="center">
-<img alt="AndroidAppTemplate" src="art/banner.jpg">
+<img alt="AndroidAppTemplate" src="art/banner.png">
 </p>
 
 # AndroidAppTemplate
