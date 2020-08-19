@@ -2,7 +2,7 @@ package com.stackinflow.androidapptemplate.buildsrc
 
 object Lib {
 
-  const val ANDROID_GRADLE_PLUGIN = "com.android.tools.build:gradle:4.2.0-alpha05"
+  const val ANDROID_GRADLE_PLUGIN = "com.android.tools.build:gradle:4.2.0-alpha07"
 
   object Androidx {
     const val CORE_KTX = "androidx.core:core-ktx:1.3.0"
@@ -35,5 +35,8 @@ object Lib {
 
   object Square {
     const val LEAK_CANARY = "com.squareup.leakcanary:leakcanary-android:2.4"
+    private const val RETROFIT_VERSION = "2.9.0"
+    const val RETROFIT = "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+    const val RETROFIT_MOSHI = "com.squareup.retrofit2:converter-moshi:$RETROFIT_VERSION"
   }
 }
