@@ -44,10 +44,9 @@ class MainViewModelTest {
 
   @Test
   fun getJokesList_successResponse_updatesLiveData() {
-
     // Given a fresh MainViewModel
     coEvery { jokeRepo.getJokes() } returns Response.success(
-      getJokeDummyData()
+      getJokeSuccessDummyData()
     )
     val viewModel = MainViewModel(jokeRepo)
 
@@ -56,11 +55,11 @@ class MainViewModelTest {
 
     // Then the liveData should update with mock data
     assertEquals(
-      viewModel.viewState.getOrAwaitValue(), ViewState.Success(getJokeDummyData())
+      viewModel.viewState.getOrAwaitValue(), ViewState.Success(getJokeSuccessDummyData())
     )
   }
 
-  private fun getJokeDummyData(): JokesResponse {
+  private fun getJokeSuccessDummyData(): JokesResponse {
     return JokesResponse(
       "success",
       listOf(Joke(1, "joke", listOf("boo")))

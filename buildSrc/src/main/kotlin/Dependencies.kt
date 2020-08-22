@@ -79,6 +79,7 @@ object Lib {
       private const val MOCKK_VERSION = "1.10.0"
       const val MOCKK = "io.mockk:mockk:$MOCKK_VERSION"
       const val ANDROID_MOCKK = "io.mockk:mockk-android:$MOCKK_VERSION"
+      const val MOCK_WEB_SERVER = "com.squareup.okhttp3:mockwebserver:4.7.2"
     }
   }
 }

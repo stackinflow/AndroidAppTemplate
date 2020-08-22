@@ -108,4 +108,5 @@ dependencies {
 
   testImplementation Lib.Test.MOCK.MOCKK
   androidTestImplementation Lib.Test.MOCK.ANDROID_MOCKK
+  testImplementation Lib.Test.MOCK.MOCK_WEB_SERVER
 }
