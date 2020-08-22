@@ -20,10 +20,13 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-    viewModel.jokeListResponse.observe(this, Observer {
-      Toast.makeText(this, "$it", Toast.LENGTH_SHORT)
-        .show()
-    })
+    viewModel.jokeListResponse.observe(
+      this,
+      Observer {
+        Toast.makeText(this, "$it", Toast.LENGTH_SHORT)
+          .show()
+      }
+    )
 
     binding.btnJokes.setOnClickListener {
       viewModel.getJokes()
