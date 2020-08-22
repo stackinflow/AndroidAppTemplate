@@ -48,6 +48,9 @@ android {
       includeAndroidResources = true
     }
   }
+  buildFeatures {
+    dataBinding = true
+  }
 }
 
 hilt {
@@ -60,9 +63,11 @@ kapt {
 
 dependencies {
 
+  implementation Lib.Androidx.ACTIVITY_KTX
   implementation Lib.Androidx.APP_COMPAT
   implementation Lib.Androidx.CORE_KTX
   implementation Lib.Androidx.CONSTRAINT_LAYOUT
+  implementation Lib.Androidx.LIFECYCLE_VIEWMODEL
   androidTestImplementation Lib.Androidx.Test.ESPRESSO_CORE
   androidTestImplementation Lib.Androidx.Test.EXT_JUNIT
 
@@ -83,6 +88,8 @@ dependencies {
   kaptTest Lib.Google.Dagger.HILT_ANDROID_COMPILER
 
   implementation Lib.Kotlin.STD_LIB
+  implementation Lib.Kotlin.COROUTINES
+  implementation Lib.Kotlin.COROUTINES_ANDROID
 
   implementation Lib.Logger.TIMBER
 

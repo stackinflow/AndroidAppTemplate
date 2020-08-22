@@ -5,9 +5,11 @@ object Lib {
   const val ANDROID_GRADLE_PLUGIN = "com.android.tools.build:gradle:4.2.0-alpha07"
 
   object Androidx {
-    const val CORE_KTX = "androidx.core:core-ktx:1.3.0"
+    const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.1.0"
     const val APP_COMPAT = "androidx.appcompat:appcompat:1.1.0"
+    const val CORE_KTX = "androidx.core:core-ktx:1.3.0"
     const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:1.1.3"
+    const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 
     object Hilt {
       private const val HILT_VERSION = "1.0.0-alpha01"
@@ -47,6 +49,11 @@ object Lib {
     private const val KOTLIN_VERSION = "1.3.72"
     const val STD_LIB = "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
     const val GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
+    private const val COROUTINES_VERSION = "1.3.7"
+    const val COROUTINES =
+      "org.jetbrains.kotlinx:kotlinx-coroutines-core:$COROUTINES_VERSION"
+    const val COROUTINES_ANDROID =
+      "org.jetbrains.kotlinx:kotlinx-coroutines-android:$COROUTINES_VERSION"
   }
 
   object Logger {

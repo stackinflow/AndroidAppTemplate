@@ -2,7 +2,6 @@
   <code_scheme name="Project" version="173">
     <option name="USE_SAME_INDENTS" value="true" />
     <option name="IGNORE_SAME_INDENTS_FOR_LANGUAGES" value="true" />
-    <option name="AUTODETECT_INDENTS" value="false" />
     <option name="OTHER_INDENT_OPTIONS">
       <value>
         <option name="INDENT_SIZE" value="2" />
@@ -17,8 +16,8 @@
     </option>
     <option name="IMPORT_LAYOUT_TABLE">
       <value>
-        <package name="" withSubpackages="true" static="false" />
         <emptyLine />
+        <package name="" withSubpackages="true" static="false" />
         <package name="" withSubpackages="true" static="true" />
       </value>
     </option>
@@ -75,8 +74,8 @@
       <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="999" />
       <option name="IMPORT_LAYOUT_TABLE">
         <value>
-          <package name="" withSubpackages="true" static="false" />
           <emptyLine />
+          <package name="" withSubpackages="true" static="false" />
           <package name="" withSubpackages="true" static="true" />
         </value>
       </option>
@@ -104,14 +103,16 @@
       <option name="NAME_COUNT_TO_USE_STAR_IMPORT" value="999" />
       <option name="NAME_COUNT_TO_USE_STAR_IMPORT_FOR_MEMBERS" value="999" />
       <option name="IMPORT_NESTED_CLASSES" value="true" />
+      <option name="CONTINUATION_INDENT_IN_ARGUMENT_LISTS" value="true" />
+      <option name="CONTINUATION_INDENT_FOR_CHAINED_CALLS" value="true" />
+      <option name="CONTINUATION_INDENT_IN_SUPERTYPE_LISTS" value="true" />
+      <option name="CONTINUATION_INDENT_IN_IF_CONDITIONS" value="true" />
+      <option name="CONTINUATION_INDENT_IN_ELVIS" value="true" />
       <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
     </JetCodeStyleSettings>
     <XML>
       <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
     </XML>
-    <editorconfig>
-      <option name="ENABLED" value="false" />
-    </editorconfig>
     <ADDITIONAL_INDENT_OPTIONS fileType="php">
       <option name="INDENT_SIZE" value="2" />
       <option name="CONTINUATION_INDENT_SIZE" value="4" />
@@ -215,6 +216,10 @@
       <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
     </codeStyleSettings>
     <codeStyleSettings language="JavaScript">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
       <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
       <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
       <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
@@ -231,10 +236,6 @@
       <option name="IF_BRACE_FORCE" value="1" />
       <option name="DOWHILE_BRACE_FORCE" value="1" />
       <option name="WHILE_BRACE_FORCE" value="1" />
-      <indentOptions>
-        <option name="INDENT_SIZE" value="2" />
-        <option name="TAB_SIZE" value="2" />
-      </indentOptions>
     </codeStyleSettings>
     <codeStyleSettings language="SQL">
       <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
@@ -263,7 +264,7 @@
     <codeStyleSettings language="XML">
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
-        <option name="CONTINUATION_INDENT_SIZE" value="4" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
         <option name="TAB_SIZE" value="2" />
       </indentOptions>
       <arrangement>
@@ -271,28 +272,22 @@
           <section>
             <rule>
               <match>
-                <NAME>class</NAME>
+                <AND>
+                  <NAME>xmlns:android</NAME>
+                  <XML_ATTRIBUTE />
+                  <XML_NAMESPACE>^$</XML_NAMESPACE>
+                </AND>
               </match>
             </rule>
           </section>
           <section>
             <rule>
               <match>
-                <NAME>layout</NAME>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <NAME>xmlns:android</NAME>
-              </match>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <NAME>xmlns:.*</NAME>
+                <AND>
+                  <NAME>xmlns:.*</NAME>
+                  <XML_ATTRIBUTE />
+                  <XML_NAMESPACE>^$</XML_NAMESPACE>
+                </AND>
               </match>
               <order>BY_NAME</order>
             </rule>
@@ -302,6 +297,7 @@
               <match>
                 <AND>
                   <NAME>.*:id</NAME>
+                  <XML_ATTRIBUTE />
                   <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
                 </AND>
               </match>
@@ -312,6 +308,7 @@
               <match>
                 <AND>
                   <NAME>.*:name</NAME>
+                  <XML_ATTRIBUTE />
                   <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
                 </AND>
               </match>
@@ -321,8 +318,9 @@
             <rule>
               <match>
                 <AND>
-                  <NAME>.*:layout_width</NAME>
-                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+                  <NAME>name</NAME>
+                  <XML_ATTRIBUTE />
+                  <XML_NAMESPACE>^$</XML_NAMESPACE>
                 </AND>
               </match>
             </rule>
@@ -331,8 +329,9 @@
             <rule>
               <match>
                 <AND>
-                  <NAME>.*:layout_height</NAME>
-                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+                  <NAME>style</NAME>
+                  <XML_ATTRIBUTE />
+                  <XML_NAMESPACE>^$</XML_NAMESPACE>
                 </AND>
               </match>
             </rule>
@@ -341,8 +340,9 @@
             <rule>
               <match>
                 <AND>
-                  <NAME>.*:layout_.*</NAME>
-                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+                  <NAME>.*</NAME>
+                  <XML_ATTRIBUTE />
+                  <XML_NAMESPACE>^$</XML_NAMESPACE>
                 </AND>
               </match>
               <order>BY_NAME</order>
@@ -353,36 +353,23 @@
               <match>
                 <AND>
                   <NAME>.*</NAME>
+                  <XML_ATTRIBUTE />
                   <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
                 </AND>
               </match>
-              <order>BY_NAME</order>
+              <order>ANDROID_ATTRIBUTE_ORDER</order>
             </rule>
           </section>
           <section>
             <rule>
               <match>
                 <AND>
-                  <NAME>app:layout_.*</NAME>
-                  <XML_NAMESPACE>http://schemas.android.com/apk/res-auto</XML_NAMESPACE>
+                  <NAME>.*</NAME>
+                  <XML_ATTRIBUTE />
+                  <XML_NAMESPACE>.*</XML_NAMESPACE>
                 </AND>
               </match>
               <order>BY_NAME</order>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <NAME>.*(?&lt;!style)$</NAME>
-              </match>
-              <order>BY_NAME</order>
-            </rule>
-          </section>
-          <section>
-            <rule>
-              <match>
-                <NAME>style</NAME>
-              </match>
             </rule>
           </section>
         </rules>
@@ -394,12 +381,16 @@
       <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
       <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="1" />
       <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
+      <option name="CALL_PARAMETERS_WRAP" value="4" />
+      <option name="METHOD_PARAMETERS_WRAP" value="4" />
+      <option name="EXTENDS_LIST_WRAP" value="5" />
+      <option name="METHOD_CALL_CHAIN_WRAP" value="2" />
       <option name="METHOD_ANNOTATION_WRAP" value="1" />
       <option name="FIELD_ANNOTATION_WRAP" value="1" />
       <option name="ENUM_CONSTANTS_WRAP" value="2" />
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
-        <option name="CONTINUATION_INDENT_SIZE" value="4" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
         <option name="TAB_SIZE" value="2" />
       </indentOptions>
     </codeStyleSettings>
