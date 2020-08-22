@@ -55,6 +55,7 @@ object Lib {
 
   object Square {
     const val LEAK_CANARY = "com.squareup.leakcanary:leakcanary-android:2.4"
+    const val LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:4.8.1"
     private const val RETROFIT_VERSION = "2.9.0"
     const val RETROFIT = "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
     const val RETROFIT_MOSHI = "com.squareup.retrofit2:converter-moshi:$RETROFIT_VERSION"

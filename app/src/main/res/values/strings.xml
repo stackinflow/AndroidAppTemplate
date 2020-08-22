@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">AndroidAppTemplate</string>
+  <string name="get_jokes">Get Jokes</string>
 </resources>

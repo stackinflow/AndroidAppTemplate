@@ -19,11 +19,17 @@ android {
     versionName AppConfig.VERSION_NAME
 
     testInstrumentationRunner "com.stackinflow.androidapptemplate.CustomTestRunner"
+
+    buildConfigField(
+        "String",
+        "BASE_URL",
+        "\"https://api.icndb.com\""
+    )
   }
 
   buildTypes {
     release {
-      minifyEnabled false
+      minifyEnabled true
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
   }
@@ -80,6 +86,7 @@ dependencies {
 
   implementation Lib.Logger.TIMBER
 
+  implementation Lib.Square.LOGGING_INTERCEPTOR
   implementation Lib.Square.RETROFIT
   implementation Lib.Square.RETROFIT_MOSHI
 

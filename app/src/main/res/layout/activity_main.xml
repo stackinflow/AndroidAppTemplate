@@ -7,10 +7,10 @@
     tools:context=".ui.MainActivity"
     >
 
-  <TextView
+  <com.google.android.material.button.MaterialButton
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Hello World!"
+      android:text="@string/get_jokes"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
