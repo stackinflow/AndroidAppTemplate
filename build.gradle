@@ -36,6 +36,8 @@ allprojects {
   }
 }
 
+apply from: 'team-props/git-hook.gradle'
+
 task clean(type: Delete) {
   delete rootProject.buildDir
 }
