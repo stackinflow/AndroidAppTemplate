@@ -21,7 +21,7 @@ object Lib {
     }
 
     object Test {
-      const val EXT_JUNIT = "androidx.test.ext:junit:1.1.1"
+      const val EXT_JUNIT = "androidx.test.ext:junit-ktx:1.1.1"
       const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:3.2.0"
     }
   }
@@ -50,6 +50,7 @@ object Lib {
     const val STD_LIB = "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
     const val GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
     private const val COROUTINES_VERSION = "1.3.7"
+    const val COROUTINES_TEST = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$COROUTINES_VERSION"
     const val COROUTINES =
       "org.jetbrains.kotlinx:kotlinx-coroutines-core:$COROUTINES_VERSION"
     const val COROUTINES_ANDROID =
@@ -69,7 +70,15 @@ object Lib {
   }
 
   object Test {
+    const val ARCH_CORE = "androidx.arch.core:core-testing:2.1.0"
+    const val CORE_TEST = "androidx.test:core-ktx:1.2.0"
     const val JUNIT = "junit:junit:4.13"
     const val ROBOELECTRIC = "org.robolectric:robolectric:4.3"
+
+    object MOCK {
+      private const val MOCKK_VERSION = "1.10.0"
+      const val MOCKK = "io.mockk:mockk:$MOCKK_VERSION"
+      const val ANDROID_MOCKK = "io.mockk:mockk-android:$MOCKK_VERSION"
+    }
   }
 }
