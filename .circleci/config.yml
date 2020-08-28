@@ -13,7 +13,6 @@ jobs:
       - run:
           name: Fastlane update
           command: |
-            bundle install
             bundle update fastlane
       - persist_to_workspace:
             root: .
@@ -26,6 +25,7 @@ jobs:
       - run:
           name: Build Debug APK
           command: |
+            bundle install
             bundle exec fastlane build_debug
       - store_artifacts:
           path: app/build/outputs/apk/
@@ -38,6 +38,7 @@ jobs:
       - run:
           name: Run Tests
           command: |
+            bundle install
             bundle exec fastlane test
   lint:
     <<: *config_android
@@ -47,6 +48,7 @@ jobs:
       - run:
           name: Lint Check
           command: |
+            bundle install
             bundle exec fastlane lint
 
 workflows:
