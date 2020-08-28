@@ -1,11 +1,13 @@
 version: 2.1
+
+config_android: &config_android
+  working_directory: ~/AndroidAppTemplate
+  docker:
+    - image: circleci/android:api-29
+
 jobs:
-  build:
-    working_directory: ~/AndroidAppTemplate
-    docker:
-      - image: circleci/android:api-29
-    environment:
-      JVM_OPTS: -Xmx3200m
+  fastlane:
+    <<: *config_android
     steps:
       - checkout
       - run:
@@ -13,15 +15,51 @@ jobs:
           command: |
             bundle install
             bundle update fastlane
-      - run:
-          name: Lint Check
-          command: |
-            bundle exec fastlane lint
-      - run:
-          name: Run Tests
-          command: |
-            bundle exec fastlane test
+      - persist_to_workspace:
+            root: .
+            paths: .
+  build:
+    <<: *config_android
+    steps:
+      - attach_workspace:
+          at: ~/AndroidAppTemplate
       - run:
           name: Build Debug APK
           command: |
             bundle exec fastlane build_debug
+      - store_artifacts:
+          path: app/build/outputs/apk/
+          destination: apks/
+  test:
+    <<: *config_android
+    steps:
+      - attach_workspace:
+          at: ~/AndroidAppTemplate
+      - run:
+          name: Run Tests
+          command: |
+            bundle exec fastlane test
+  lint:
+    <<: *config_android
+    steps:
+      - attach_workspace:
+          at: ~/AndroidAppTemplate
+      - run:
+          name: Lint Check
+          command: |
+            bundle exec fastlane lint
+
+workflows:
+  version: 2.1
+  lint_build_test:
+    jobs:
+      - fastlane
+      - lint:
+          requires:
+            - fastlane
+      - test:
+          requires:
+            - fastlane
+      - build:
+          requires:
+            - fastlane
