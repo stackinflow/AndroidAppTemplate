@@ -2,7 +2,7 @@ package com.stackinflow.androidapptemplate.buildsrc
 
 object Lib {
 
-  const val ANDROID_GRADLE_PLUGIN = "com.android.tools.build:gradle:4.2.0-alpha07"
+  const val ANDROID_GRADLE_PLUGIN = "com.android.tools.build:gradle:4.2.0-alpha08"
 
   object Androidx {
     const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.1.0"
@@ -10,6 +10,13 @@ object Lib {
     const val CORE_KTX = "androidx.core:core-ktx:1.3.0"
     const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:1.1.3"
     const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+
+    object Compose {
+      private const val COMPOSE_VERSION = "1.0.0-alpha01"
+      const val UI = "androidx.compose.ui:ui:$COMPOSE_VERSION"
+      const val MATERIAL = "androidx.compose.material:material:$COMPOSE_VERSION"
+      const val TOOLING = "androidx.ui:ui-tooling:$COMPOSE_VERSION"
+    }
 
     object Hilt {
       private const val HILT_VERSION = "1.0.0-alpha01"
@@ -46,7 +53,7 @@ object Lib {
   }
 
   object Kotlin {
-    private const val KOTLIN_VERSION = "1.3.72"
+    private const val KOTLIN_VERSION = "1.4.0"
     const val STD_LIB = "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
     const val GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
     private const val COROUTINES_VERSION = "1.3.7"
