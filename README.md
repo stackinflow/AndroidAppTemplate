@@ -13,6 +13,7 @@
 
 ## Includes
 - [kotlin](https://kotlinlang.org/)
+- [Jetpack Compose](https://developer.android.com/jetpack/compose)
 - [Architecture Components](https://developer.android.com/jetpack/guide)
 - [Dagger 🗡 hilt for dependency injection](https://dagger.dev/hilt/)
 - [Leak canary](https://square.github.io/leakcanary/)

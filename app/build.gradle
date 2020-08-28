@@ -41,6 +41,11 @@ android {
 
   kotlinOptions {
     jvmTarget = '1.8'
+    useIR = true
+  }
+
+  composeOptions {
+    kotlinCompilerExtensionVersion "1.0.0-alpha01"
   }
 
   testOptions {
@@ -49,7 +54,7 @@ android {
     }
   }
   buildFeatures {
-    dataBinding = true
+    compose true
   }
 }
 
@@ -70,6 +75,10 @@ dependencies {
   implementation Lib.Androidx.LIFECYCLE_VIEWMODEL
   androidTestImplementation Lib.Androidx.Test.ESPRESSO_CORE
   androidTestImplementation Lib.Androidx.Test.EXT_JUNIT
+
+  implementation Lib.Androidx.Compose.UI
+  implementation Lib.Androidx.Compose.MATERIAL
+  implementation Lib.Androidx.Compose.TOOLING
 
   implementation Lib.Androidx.Hilt.LIFECYCLE_VIEWMODEL
   implementation Lib.Androidx.Hilt.WORK
