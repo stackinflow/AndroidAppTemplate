@@ -79,6 +79,7 @@ dependencies {
   implementation Lib.Androidx.Compose.UI
   implementation Lib.Androidx.Compose.MATERIAL
   implementation Lib.Androidx.Compose.TOOLING
+  androidTestImplementation Lib.Androidx.Compose.TESTING
 
   implementation Lib.Androidx.Hilt.LIFECYCLE_VIEWMODEL
   implementation Lib.Androidx.Hilt.WORK

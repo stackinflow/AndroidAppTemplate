@@ -6,9 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.stackinflow.androidapptemplate.repository.JokeRepo
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class MainViewModel @ViewModelInject constructor(
   private val jokeRepo: JokeRepo
@@ -19,13 +17,11 @@ class MainViewModel @ViewModelInject constructor(
 
   fun getJokes() {
     viewModelScope.launch {
-      withContext(Dispatchers.IO) {
-        val result = jokeRepo.getJokes()
-        if (result.isSuccessful) {
-          _viewState.postValue(ViewState.Success(result.body()))
-        } else {
-          _viewState.postValue(ViewState.Error(result.errorBody()))
-        }
+      val result = jokeRepo.getJokes()
+      if (result.isSuccessful) {
+        _viewState.postValue(ViewState.Success(result.body()))
+      } else {
+        _viewState.postValue(ViewState.Error(result.errorBody()))
       }
     }
   }

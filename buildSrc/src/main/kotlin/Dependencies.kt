@@ -2,7 +2,7 @@ package com.stackinflow.androidapptemplate.buildsrc
 
 object Lib {
 
-  const val ANDROID_GRADLE_PLUGIN = "com.android.tools.build:gradle:4.2.0-alpha08"
+  const val ANDROID_GRADLE_PLUGIN = "com.android.tools.build:gradle:4.2.0-alpha10"
 
   object Androidx {
     const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.1.0"
@@ -16,6 +16,7 @@ object Lib {
       const val UI = "androidx.compose.ui:ui:$COMPOSE_VERSION"
       const val MATERIAL = "androidx.compose.material:material:$COMPOSE_VERSION"
       const val TOOLING = "androidx.ui:ui-tooling:$COMPOSE_VERSION"
+      const val TESTING = "androidx.ui:ui-test:$COMPOSE_VERSION"
     }
 
     object Hilt {
