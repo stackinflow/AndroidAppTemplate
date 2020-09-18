@@ -2,7 +2,7 @@ package com.stackinflow.androidapptemplate.buildsrc
 
 object Lib {
 
-  const val ANDROID_GRADLE_PLUGIN = "com.android.tools.build:gradle:4.2.0-alpha10"
+  const val ANDROID_GRADLE_PLUGIN = "com.android.tools.build:gradle:4.2.0-alpha11"
 
   object Androidx {
     const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.1.0"
@@ -89,5 +89,12 @@ object Lib {
       const val ANDROID_MOCKK = "io.mockk:mockk-android:$MOCKK_VERSION"
       const val MOCK_WEB_SERVER = "com.squareup.okhttp3:mockwebserver:4.7.2"
     }
+  }
+
+  object Chucker {
+    private const val CHUCKER_VERSION = "3.2.0"
+    const val CHUCKER_DEBUG = "com.github.chuckerteam.chucker:library:$CHUCKER_VERSION"
+    const val CHUCKER_NO_OP_RELEASE =
+      "com.github.chuckerteam.chucker:library-no-op:$CHUCKER_VERSION"
   }
 }

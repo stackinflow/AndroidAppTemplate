@@ -1,10 +1,13 @@
 package com.stackinflow.androidapptemplate.di
 
+import android.content.Context
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.stackinflow.androidapptemplate.BuildConfig
 import com.stackinflow.androidapptemplate.network.api.JokeApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -21,7 +24,7 @@ object NetworkModule {
 
   @Provides
   @Singleton
-  fun provideOkHttpClient(): OkHttpClient {
+  fun provideOkHttpClient(@ApplicationContext context: Context): OkHttpClient {
     return OkHttpClient.Builder()
       .apply {
         if (BuildConfig.DEBUG) {
@@ -30,6 +33,7 @@ object NetworkModule {
               level = HttpLoggingInterceptor.Level.BODY
             }
           )
+          addInterceptor(ChuckerInterceptor(context))
         }
         connectTimeout(TIMEOUT_IN_SECONDS, SECONDS)
         writeTimeout(TIMEOUT_IN_SECONDS, SECONDS)

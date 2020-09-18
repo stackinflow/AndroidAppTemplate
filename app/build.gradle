@@ -87,6 +87,9 @@ dependencies {
   kaptTest Lib.Androidx.Hilt.COMPILER
   kaptAndroidTest Lib.Androidx.Hilt.COMPILER
 
+  debugImplementation Lib.Chucker.CHUCKER_DEBUG
+  releaseImplementation Lib.Chucker.CHUCKER_NO_OP_RELEASE
+
   implementation Lib.Google.Dagger.HILT_ANDROID
   kapt Lib.Google.Dagger.HILT_ANDROID_COMPILER
   implementation Lib.Google.MATERIAL_DESIGN
